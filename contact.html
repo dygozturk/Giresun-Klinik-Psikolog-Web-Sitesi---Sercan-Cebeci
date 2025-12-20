@@ -25,17 +25,6 @@
                     fontFamily: {
                         sans: ['Outfit', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
-                    },
-                    animation: {
-                        'blob': 'blob 10s infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
                     }
                 }
             }
@@ -55,14 +44,7 @@
 </head>
 <body class="font-sans text-brand-dark bg-slate-50 relative overflow-x-hidden selection:bg-brand-secondary selection:text-white">
 
-    <div class="fixed inset-0 -z-10 w-full h-full bg-gradient-to-br from-indigo-50 via-white to-purple-50"></div>
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
-    </div>
-
-
-    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-white/40 shadow-sm transition-all duration-300">
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="flex flex-col group">
@@ -75,10 +57,10 @@
                 </a>
 
                 <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Hakkımda</a>
-                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Çalışma Alanları</a>
-                    <a href="tests.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Testler</a>
-                    <a href="clinic.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Klinik</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-all">Hakkımda</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-all">Çalışma Alanları</a>
+                    <a href="tests.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-all">Testler</a>
+                    <a href="clinic.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-all">Klinik</a>
                     <a href="contact.html" class="text-sm font-bold text-brand-primary bg-indigo-50 px-3 py-2 rounded-lg">İletişim</a>
                 </nav>
 
@@ -87,12 +69,12 @@
                 </button>
             </div>
 
-            <div id="mobile-menu" class="md:hidden mt-4 bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl absolute left-4 right-4 top-full overflow-hidden z-50">
+            <div id="mobile-menu" class="md:hidden mt-4 bg-white border-t border-slate-100 rounded-b-2xl shadow-xl absolute left-0 w-full z-50">
                 <nav class="flex flex-col p-4 space-y-2 text-center">
-                    <a href="about.html" class="text-slate-700 font-medium py-3">Hakkımda</a>
-                    <a href="services.html" class="text-slate-700 font-medium py-3">Çalışma Alanları</a>
-                    <a href="tests.html" class="text-slate-700 font-medium py-3">Testler</a>
-                    <a href="clinic.html" class="text-slate-700 font-medium py-3">Klinik</a>
+                    <a href="about.html" class="text-slate-700 font-medium py-3 border-b border-slate-50">Hakkımda</a>
+                    <a href="services.html" class="text-slate-700 font-medium py-3 border-b border-slate-50">Çalışma Alanları</a>
+                    <a href="tests.html" class="text-slate-700 font-medium py-3 border-b border-slate-50">Testler</a>
+                    <a href="clinic.html" class="text-slate-700 font-medium py-3 border-b border-slate-50">Klinik</a>
                     <a href="contact.html" class="bg-brand-primary text-white py-3 rounded-xl font-bold shadow-md mt-2">Randevu Al</a>
                 </nav>
             </div>
@@ -100,132 +82,108 @@
     </header>
 
 
-    <section class="pt-32 pb-12 text-center relative">
+    <section class="pt-32 pb-16 bg-slate-900 text-center relative">
         <div class="container mx-auto px-6 relative z-10">
-            <span class="text-brand-secondary font-bold tracking-widest text-xs uppercase mb-3 block animate-pulse">Ulaşım & Randevu</span>
-            <h1 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-4">
-                İletişime <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-purple-600">Geçin</span>
+            <span class="text-brand-secondary font-bold tracking-widest text-xs uppercase mb-3 block">Ulaşım & Randevu</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4">
+                İletişime Geçin
             </h1>
-            <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                Randevu oluşturmak, konum almak veya merak ettiklerinizi sormak için aşağıdaki kanalları kullanabilirsiniz.
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                Randevu oluşturmak, konum almak veya merak ettiklerinizi sormak için bize ulaşın.
             </p>
         </div>
     </section>
 
 
-    <section class="py-12">
+    <section class="py-12 md:py-20 bg-slate-50">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
                 
-                <a href="https://wa.me/905345213839?text=Merhaba%20Sercan%20Bey,%20klinik%20randevusu%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="group bg-white p-6 rounded-2xl shadow-sm border border-green-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-green-50 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-14 h-14 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <div class="lg:col-span-5 flex flex-col gap-4">
+                    
+                    <a href="https://wa.me/905345213839?text=Merhaba%20Sercan%20Bey,%20klinik%20randevusu%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="group flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-green-200 transition-all duration-300">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-1">WhatsApp & Telefon</h3>
-                        <p class="text-sm text-slate-500 mb-2">Hızlı randevu ve bilgi için.</p>
-                        <span class="text-green-600 font-bold block group-hover:underline">0534 521 38 39</span>
-                    </div>
-                </a>
-
-                <a href="https://instagram.com/giresunklinikpsikolog" target="_blank" class="group bg-white p-6 rounded-2xl shadow-sm border border-pink-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-pink-100 to-purple-100 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-14 h-14 mx-auto bg-pink-50 text-pink-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <div>
+                            <h3 class="font-bold text-slate-800">WhatsApp & Telefon</h3>
+                            <p class="text-green-600 font-semibold text-sm mt-1">0534 521 38 39</p>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-1">Instagram</h3>
-                        <p class="text-sm text-slate-500 mb-2">Güncel paylaşımlar için takip edin.</p>
-                        <span class="text-pink-600 font-bold block text-sm group-hover:underline">@giresunklinikpsikolog</span>
-                    </div>
-                </a>
-
-                <a href="https://www.google.com/maps/search/?api=1&query=Çıtlakkale+Mah.+121+Nolu+Sok.+No:+7B,+Merkez+/+Giresun" target="_blank" class="group bg-white p-6 rounded-2xl shadow-sm border border-blue-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-blue-50 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-14 h-14 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-1">Adres & Konum</h3>
-                        <p class="text-sm text-slate-500 mb-2">Yol tarifi almak için tıklayın.</p>
-                        <span class="text-blue-600 font-bold block text-sm group-hover:underline">Giresun / Merkez</span>
-                    </div>
-                </a>
-
-                <a href="mailto:cebecisercan1995@gmail.com" class="group bg-white p-6 rounded-2xl shadow-sm border border-purple-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-purple-50 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-14 h-14 mx-auto bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:scale-110 transition">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 mb-1">E-Posta</h3>
-                        <p class="text-sm text-slate-500 mb-2">Bize yazabilirsiniz.</p>
-                        <span class="text-purple-600 font-bold block text-xs group-hover:underline">cebecisercan1995@gmail.com</span>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-12 md:pb-20">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
-                
-                <div class="w-full h-[500px] rounded-3xl overflow-hidden shadow-xl border-4 border-white relative group">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Çıtlakkale+Mah.+121+Nolu+Sok.+No:+7B,+Merkez+/+Giresun&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="w-full h-full">
-                    </iframe>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Çıtlakkale+Mah.+121+Nolu+Sok.+No:+7B,+Merkez+/+Giresun" target="_blank" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center cursor-pointer">
-                        <span class="bg-white text-slate-800 px-6 py-3 rounded-full font-bold shadow-lg transform scale-90 group-hover:scale-100 transition">Google Haritalar'da Aç</span>
                     </a>
+
+                    <a href="https://instagram.com/giresunklinikpsikolog" target="_blank" class="group flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-pink-200 transition-all duration-300">
+                        <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-full flex items-center justify-center shrink-0 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-pink-500 group-hover:to-purple-500 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">Instagram</h3>
+                            <p class="text-pink-600 font-semibold text-sm mt-1">@giresunklinikpsikolog</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Çıtlakkale+Mah.+121+Nolu+Sok.+No:+7B,+Merkez+/+Giresun" target="_blank" class="group flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-200 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">Adres</h3>
+                            <p class="text-slate-500 text-sm mt-1 leading-tight">Çıtlakkale Mah. No:7B <br>Giresun / Merkez</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:cebecisercan1995@gmail.com" class="group flex items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-purple-200 transition-all duration-300">
+                        <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center shrink-0 group-hover:bg-purple-600 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">E-Posta</h3>
+                            <p class="text-purple-600 font-semibold text-sm mt-1">cebecisercan1995@gmail.com</p>
+                        </div>
+                    </a>
+
                 </div>
 
-                <div class="bg-white/80 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-xl border border-white relative overflow-hidden flex flex-col justify-center">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-primary/10 rounded-bl-full"></div>
-                    
-                    <h2 class="text-3xl font-serif font-bold text-slate-800 mb-2">Bize Ulaşın</h2>
-                    <p class="text-slate-500 mb-8">Sorularınız için formu doldurun, en kısa sürede dönüş yapalım.</p>
-                    
-                    <form class="space-y-5">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Ad Soyad</label>
-                                <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="Adınız Soyadınız">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Telefon</label>
-                                <input type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="05XX ...">
-                            </div>
-                        </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 h-full">
+                        <h2 class="text-3xl font-serif font-bold text-slate-800 mb-2">Bize Ulaşın</h2>
+                        <p class="text-slate-500 mb-8">Formu doldurun, size en kısa sürede dönüş yapalım.</p>
                         
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Konu</label>
-                            <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition text-slate-600">
-                                <option>Randevu Talebi</option>
-                                <option>Bilgi Almak İstiyorum</option>
-                                <option>Diğer</option>
-                            </select>
-                        </div>
+                        <form class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Ad Soyad</label>
+                                    <input type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="Adınız Soyadınız">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Telefon</label>
+                                    <input type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="05XX ...">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">E-Posta</label>
+                                <input type="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="E-posta adresiniz">
+                            </div>
 
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Mesajınız</label>
-                            <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="Size nasıl yardımcı olabiliriz?"></textarea>
-                        </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Konu</label>
+                                <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition text-slate-600">
+                                    <option>Randevu Talebi</option>
+                                    <option>Bilgi Almak İstiyorum</option>
+                                    <option>Diğer</option>
+                                </select>
+                            </div>
 
-                        <button type="button" class="w-full bg-gradient-to-r from-brand-dark to-slate-800 text-white py-4 rounded-xl font-bold hover:shadow-lg hover:-translate-y-1 transition duration-300">
-                            Mesajı Gönder
-                        </button>
-                    </form>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Mesajınız</label>
+                                <textarea rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition placeholder-slate-400" placeholder="Mesajınızı buraya yazabilirsiniz..."></textarea>
+                            </div>
+
+                            <button type="button" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition shadow-lg transform hover:-translate-y-1">
+                                Gönder
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -233,9 +191,23 @@
     </section>
 
 
-    <footer class="bg-slate-900 text-slate-400 py-12 relative overflow-hidden border-t border-white/10">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent"></div>
-        <div class="container mx-auto px-6 relative z-10">
+    <section class="w-full h-96 bg-slate-200 relative group">
+        <iframe 
+            src="https://www.google.com/maps?q=Giresun&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full filter grayscale group-hover:grayscale-0 transition duration-700">
+        </iframe>
+        <div class="absolute inset-0 bg-black/10 pointer-events-none group-hover:bg-transparent transition"></div>
+    </section>
+
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-white/10">
+        <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
                 
                 <div>
@@ -273,7 +245,7 @@
 
             </div>
             <div class="border-t border-slate-800 mt-12 pt-6 text-center text-xs text-slate-600">
-                &copy; 2025 Sercan Cebeci. Tüm hakları saklıdır.
+                © 2025 Sercan Cebeci. Tüm hakları saklıdır.
             </div>
         </div>
     </footer>
@@ -285,7 +257,9 @@
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('open'); });
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
     </script>
 </body>
 </html>
