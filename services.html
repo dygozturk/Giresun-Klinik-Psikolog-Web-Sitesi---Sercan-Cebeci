@@ -43,12 +43,21 @@
     </script>
     
     <style>
+        /* Mobil Menü Animasyonu */
         #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; opacity: 0; overflow: hidden; }
         #mobile-menu.open { max-height: 500px; opacity: 1; }
         
-        /* Resimlerin üzerine gelince yavaşça büyümesi için */
+        /* Resimlerin üzerine gelince büyüme efekti (Zoom) */
         .hover-zoom img { transition: transform 0.7s ease-in-out; }
         .hover-zoom:hover img { transform: scale(1.1); }
+
+        /* WhatsApp Nabız */
+        .pulse-btn { animation: pulse-green 2s infinite; }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
     </style>
 </head>
 <body class="font-sans text-brand-dark bg-slate-50 relative overflow-x-hidden selection:bg-brand-secondary selection:text-white">
@@ -122,7 +131,7 @@
                 
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover-zoom">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Bireysel Terapi">
+                        <img src="img/terapi_1.jpg" class="w-full h-full object-cover" alt="Bireysel Terapi">
                         <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-300"></div>
                     </div>
                     <div class="p-6">
@@ -135,21 +144,21 @@
 
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover-zoom">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="BDT">
+                        <img src="img/terapi_2.jpg" class="w-full h-full object-cover" alt="BDT">
                         <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-300"></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Bilişsel Davranışçı T.</h3>
                         <p class="text-sm text-slate-500 leading-relaxed">
-                            Olumsuz düşünce kalıplarını ve davranışları değiştirerek duygusal iyileşme sağlayan yöntem.
+                            Olumsuz düşünce kalıplarını ve davranışları değiştirerek duygusal iyileşme sağlayan yapılandırılmış yöntem.
                         </p>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover-zoom">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d996355?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Şema Terapi">
-                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-300"></div>
+                        <img src="img/terapi_6.png" class="w-full h-full object-cover" alt="Şema Terapi">
+                        <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-300"></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Şema Terapi</h3>
@@ -161,13 +170,13 @@
 
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group hover-zoom">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover" alt="Çözüm Odaklı">
+                        <img src="img/terapi_4.jpg" class="w-full h-full object-cover" alt="Çözüm Odaklı">
                         <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-300"></div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Çözüm Odaklı T.</h3>
                         <p class="text-sm text-slate-500 leading-relaxed">
-                            Sorunun geçmişine değil, kişinin güçlü yanlarına ve gelecekteki çözümlere odaklanan yaklaşım.
+                            Sorunun geçmişine değil, kişinin güçlü yanlarına ve gelecekteki çözümlere odaklanan kısa süreli yaklaşım.
                         </p>
                     </div>
                 </div>
