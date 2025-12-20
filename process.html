@@ -1,94 +1,281 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terapi Süreci - Uzman Klinik Psikolog Sercan Cebeci</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Terapi Süreci | Uzman Klinik Psikolog Sercan Cebeci</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1e293b',
+                            primary: '#6366f1',
+                            secondary: '#8b5cf6',
+                            light: '#f8fafc',
+                            accent: '#38bdf8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+        .pulse-btn { animation: pulse-green 2s infinite; }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-brand-dark bg-slate-50 relative overflow-x-hidden selection:bg-brand-secondary selection:text-white">
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container">
-        <a href="index.html" class="logo">Sercan Cebeci</a>
-        <nav class="main-nav">
-            <a href="about.html">Hakkımda</a>
-            <a href="services.html">Çalışma Alanları</a>
-            <a href="tests.html">Testler</a>
-            <a href="process.html" class="active">Terapi Süreci</a>
-            <a href="clinic.html">Klinik</a>
-            <a href="contact.html" class="btn-nav">İletişim</a>
-        </nav>
+    <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
     </div>
-</header>
 
-<!-- PAGE HERO -->
-<section class="page-hero small">
-    <div class="container">
-        <h1>Terapi Süreci</h1>
-        <p>Terapi yolculuğunu anlaşılır, şeffaf ve güven verici bir süreç hâline getiriyoruz.</p>
-    </div>
-</section>
 
-<!-- TERAPİ SÜRECİ ADIMLARI -->
-<section class="process-steps-section">
-    <div class="container">
+    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-white/20 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex flex-col group">
+                    <span class="text-2xl font-serif font-bold text-slate-800 tracking-wide group-hover:text-brand-primary transition-colors">
+                        Sercan Cebeci
+                    </span>
+                    <span class="text-[10px] font-bold text-brand-secondary tracking-[0.2em] uppercase">
+                        Uzman Klinik Psikolog
+                    </span>
+                </a>
 
-        <!-- Adım 1 -->
-        <div class="process-step">
-            <span class="step-number">1</span>
-            <h2>Ön Görüşme & Değerlendirme</h2>
-            <p>
-                İlk görüşmede danışanın yaşam öyküsü, şu an yaşadığı zorluklar, duygusal süreçleri 
-                ve terapi motivasyonları ele alınır. Görüşme sonunda hangi terapi yaklaşımının uygun 
-                olduğu belirlenir ve genel bir yol haritası çıkarılır.
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="about.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Hakkımda</a>
+                    <a href="services.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Çalışma Alanları</a>
+                    <a href="process.html" class="text-sm font-bold text-brand-primary bg-indigo-50 px-3 py-2 rounded-lg">Terapi Süreci</a>
+                    <a href="tests.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Testler</a>
+                    <a href="clinic.html" class="text-sm font-medium text-slate-600 hover:text-brand-primary hover:bg-indigo-50 px-3 py-2 rounded-lg transition-all">Klinik</a>
+                    <a href="contact.html" class="px-6 py-2.5 bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 transition-all transform">
+                        Randevu Al
+                    </a>
+                </nav>
+
+                <button id="menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden mt-4 bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl shadow-xl absolute left-4 right-4 top-full overflow-hidden z-50">
+                <nav class="flex flex-col p-4 space-y-2 text-center">
+                    <a href="about.html" class="text-slate-700 font-medium py-3 hover:bg-indigo-50 rounded-xl transition">Hakkımda</a>
+                    <a href="process.html" class="text-brand-primary font-bold py-3 bg-indigo-50 rounded-xl">Terapi Süreci</a>
+                    <a href="services.html" class="text-slate-700 font-medium py-3 hover:bg-indigo-50 rounded-xl transition">Çalışma Alanları</a>
+                    <a href="tests.html" class="text-slate-700 font-medium py-3 hover:bg-indigo-50 rounded-xl transition">Testler</a>
+                    <a href="clinic.html" class="text-slate-700 font-medium py-3 hover:bg-indigo-50 rounded-xl transition">Klinik</a>
+                    <a href="contact.html" class="bg-brand-primary text-white py-3 rounded-xl font-bold shadow-md mt-2">Randevu Al</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="pt-32 pb-12 text-center relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="text-brand-secondary font-bold tracking-widest text-xs uppercase mb-3 block animate-pulse">Yolculuk</span>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Terapi Süreci Nasıl İşler?</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                Terapi yolculuğunu anlaşılır, şeffaf ve güven verici bir süreç hâline getiriyoruz. Adım adım iyileşme yolculuğunuz.
             </p>
         </div>
+    </section>
 
-        <!-- Adım 2 -->
-        <div class="process-step">
-            <span class="step-number">2</span>
-            <h2>Terapi Planının Oluşturulması</h2>
-            <p>
-                Danışanın ihtiyaçlarına yönelik seans sıklığı, hedefler, kullanılacak teknikler ve 
-                çalışma modelleri belirlenir. Bu plan tamamen kişiye özeldir ve danışanla birlikte 
-                şekillendirilir.
-            </p>
+
+    <section class="py-12 md:py-20 relative">
+        <div class="container mx-auto px-6">
+            
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-indigo-100 -translate-x-1/2 z-0"></div>
+
+            <div class="space-y-12 relative z-10">
+
+                <div class="flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 order-2 md:order-1 bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:border-brand-primary/30 transition hover:-translate-y-1">
+                        <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">1. Ön Görüşme & Değerlendirme</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            İlk görüşmede danışanın yaşam öyküsü, şu an yaşadığı zorluklar, duygusal süreçleri ve terapi motivasyonları ele alınır. Hangi terapi yaklaşımının uygun olduğu belirlenir.
+                        </p>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg order-1 md:order-2 mb-4 md:mb-0 z-10 relative">1</div>
+                    <div class="w-full md:w-5/12 order-3 md:order-3"></div> </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 order-3 md:order-1"></div> <div class="w-12 h-12 bg-brand-secondary text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg order-1 md:order-2 mb-4 md:mb-0 z-10 relative">2</div>
+                    <div class="w-full md:w-5/12 order-2 md:order-3 bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:border-brand-secondary/30 transition hover:-translate-y-1">
+                        <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">2. Terapi Planı</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Danışanın ihtiyaçlarına yönelik seans sıklığı, hedefler, kullanılacak teknikler ve çalışma modelleri belirlenir. Bu plan tamamen kişiye özeldir.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 order-2 md:order-1 bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:border-brand-accent/30 transition hover:-translate-y-1">
+                        <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">3. Çalışma Süreci</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Terapi süreci ilerledikçe danışanın duygu, düşünce ve davranışlarındaki değişimler gözlemlenir. Gerekli durumlarda plan güncellenir ve gelişim takip edilir.
+                        </p>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg order-1 md:order-2 mb-4 md:mb-0 z-10 relative">3</div>
+                    <div class="w-full md:w-5/12 order-3 md:order-3"></div> </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 order-3 md:order-1"></div> <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg order-1 md:order-2 mb-4 md:mb-0 z-10 relative">4</div>
+                    <div class="w-full md:w-5/12 order-2 md:order-3 bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:border-green-400/30 transition hover:-translate-y-1">
+                        <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">4. Sonlandırma</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Danışan hedeflerine ulaştığında süreç sonlandırılır. Kazanımlar ve kişisel farkındalık değerlendirilir. Gerekirse kontrol seansları planlanabilir.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <!-- Adım 3 -->
-        <div class="process-step">
-            <span class="step-number">3</span>
-            <h2>Çalışma Süreci & Düzenli Takip</h2>
-            <p>
-                Terapi süreci ilerledikçe danışanın duygu, düşünce ve davranışlarındaki değişimler 
-                gözlemlenir. Gerekli durumlarda terapi planı güncellenir ve gelişim düzenli olarak 
-                değerlendirilir.
-            </p>
+
+    <section class="py-12 md:py-20 bg-slate-50 border-y border-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-serif font-bold text-center text-slate-800 mb-10">Sıkça Sorulan Sorular</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-primary/20">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        Seanslar ne kadar sürüyor?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+                        Bir terapi seansı genellikle 45-50 dakika sürmektedir. Çocuk ve ergen seanslarında bu süre yapılandırılmış oyuna veya görüşmeye göre değişkenlik gösterebilir.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-primary/20">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        Terapi ne kadar sürer?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+                        Terapi süreci kişinin ihtiyacına, sorunun derinliğine ve terapi hedeflerine göre değişiklik gösterir. Bazı durumlarda kısa süreli (8-12 seans) çözüm odaklı çalışılırken, bazen daha uzun soluklu bir süreç gerekebilir.
+                    </p>
+                </details>
+
+                <details class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer open:ring-2 open:ring-brand-primary/20">
+                    <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
+                        Online terapi yapıyor musunuz?
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+                        Evet, şehir dışında veya yurt dışında yaşayan danışanlarımız için online (görüntülü) terapi hizmeti sunmaktayız. Etik kurallar ve gizlilik yüz yüze terapideki gibi geçerlidir.
+                    </p>
+                </details>
+            </div>
         </div>
+    </section>
 
-        <!-- Adım 4 -->
-        <div class="process-step">
-            <span class="step-number">4</span>
-            <h2>Sonlandırma & Geri Bildirim</h2>
-            <p>
-                Danışanın hedeflerine ulaştığı noktada terapi süreci sonlandırılır. Seansın sonunda 
-                kişisel farkındalık, kazanımlar ve sürecin genel değerlendirmesi yapılır. Gerekirse 
-                takip seansları planlanabilir.
+
+    <section class="py-16 bg-slate-900 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-serif font-bold mb-4">İlk Adımı Atın</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">
+                Değişim bir kararla başlar. Kendiniz için bir iyilik yapın ve profesyonel destek alın.
             </p>
+            <a href="contact.html" class="inline-block px-8 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-indigo-700 transition transform hover:-translate-y-1 shadow-lg shadow-indigo-500/50">
+                Randevu Oluştur
+            </a>
         </div>
+    </section>
 
-    </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-        <p>© 2025 Uzman Klinik Psikolog Sercan Cebeci</p>
-    </div>
-</footer>
+    <footer class="bg-slate-900 text-slate-400 py-12 relative overflow-hidden border-t border-white/10">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Sercan Cebeci</h3>
+                    <p class="text-sm font-medium text-brand-primary uppercase tracking-widest mb-4">Uzman Klinik Psikolog</p>
+                    <p class="text-sm leading-relaxed text-slate-500 max-w-xs mx-auto md:mx-0">
+                        Danışan haklarına saygılı, etik kurallara bağlı ve bilimsel yöntemlerle çalışan bir psikoterapi merkezi.
+                    </p>
+                </div>
 
+                <div>
+                    <h4 class="text-white font-bold mb-4">Hızlı Erişim</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-brand-accent transition">Ana Sayfa</a></li>
+                        <li><a href="about.html" class="hover:text-brand-accent transition">Hakkımda</a></li>
+                        <li><a href="process.html" class="hover:text-brand-accent transition">Terapi Süreci</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition">İletişim & Randevu</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">İletişim</h4>
+                    <div class="space-y-3">
+                        <p class="text-sm flex items-start justify-center md:justify-start gap-2">
+                            <svg class="w-5 h-5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Çıtlakkale Mah. 121 Nolu Sok.<br>No: 7B, Giresun/Merkez</span>
+                        </p>
+                        <a href="tel:05345213839" class="text-xl font-bold text-white block hover:text-brand-primary transition mt-2">
+                            0534 521 38 39
+                        </a>
+                        <a href="mailto:cebecisercan1995@gmail.com" class="text-sm text-slate-500 hover:text-white transition">cebecisercan1995@gmail.com</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-6 text-center text-xs text-slate-600">
+                &copy; 2025 Sercan Cebeci. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905345213839" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl pulse-btn hover:scale-110 transition duration-300 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('open'); });
+    </script>
 </body>
 </html>
